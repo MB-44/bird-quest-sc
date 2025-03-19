@@ -3,7 +3,7 @@ var Jigsaw = function () {
     var puzzleImg = {};
     var pieces = [];
     var gridSize = 3;
-    var puzzleSize = 300; // Fixed puzzle size
+    var puzzleSize = 300; 
     var timerInterval;
     var timeRemaining = 30;
     var gameActive = false;
@@ -17,7 +17,7 @@ var Jigsaw = function () {
         this.size = size;
         this.newRow = row;
         this.newCol = col;
-        // Will hold the initial scrambled position
+        // Holds the initial scrambled position
         this.startRow = row;
         this.startCol = col;
 
@@ -264,7 +264,6 @@ var Jigsaw = function () {
         return array;
     }
 
-    // Reset: return pieces to their scrambled (starting) positions.
     function resetToStart() {
         clearInterval(timerInterval);
         timeRemaining = 30;
@@ -275,7 +274,6 @@ var Jigsaw = function () {
         startTimer();
     }
 
-    // Expose public methods
     return {
         init: initPuzzle,
         restart: function() {
@@ -291,7 +289,7 @@ $(document).ready(function () {
     var jigsaw = new Jigsaw();
     jigsaw.init({
         container: '#puzzle-container',
-        image: 'img/bird.png', // fallback to placeholder if not found
+        image: 'img/bird.png', 
         gridSize: 3
     });
 
