@@ -5,31 +5,28 @@ html, body {
     height: 100vh;
     overflow: hidden;
     font-family: "TrajanPro";
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .rotated-container {
-    width: 100vh;
-    height: 100vw;
-
-    transform: rotate(90deg) translateY(-100%);
-    transform-origin: top left;
-    position: absolute;
-    top: 0;
-    left: 0;
+    transform: rotate(90deg);
+    transform-origin: center center;
 }
 
 body.start-page {
-    background: url('img/start-bg.jpg') no-repeat center center fixed;
+    background: url('/img/game-start.png') no-repeat center center fixed;
     background-size: cover;
 }
 
 body.index-page {
-    background: url('img/index-bg.jpg') no-repeat center center fixed;
+    background: url('/img/game-bg.png') no-repeat center center fixed;
     background-size: cover;
 }
 
 body.end-page {
-    background: url('img/end-bg.jpg') no-repeat center center fixed;
+    background: url('/img/game-end.png') no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -39,8 +36,6 @@ body.end-page {
     overflow: visible !important;
     padding: 20px;
     background-color: transparent;
-    /* background-color: rgba(255, 255, 255, 0.7); */
-    /* box-shadow: 4px 4px 20px 0 rgba(0,0,0,0.2); */
     border-radius: 6px;
     display: flex;
     flex-direction: column;
@@ -49,12 +44,11 @@ body.end-page {
 
 #puzzle-container {
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 700px;
+    height: 700px;
     margin: 20px 0;
     border: 1px solid #ccc;
     background-color: #f0f0f0;
-    /* background-color: transparen; */
 }
 
 .timer-container {
@@ -74,20 +68,37 @@ body.end-page {
 }
 
 button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #0288d1;
+    padding: 12px 30px;
+    font-size: 20px;
+    /* background-image: url("/img/gold-color.png"); */
+    background-color: #f3e228b6;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin: 5px;
+    margin: 10px;
     font-family: "TrajanPro";
     font-weight: bolder;
 }
 
-button:hover {
-    background-color: #015f92;
+#start-screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#start-screen button {
+    position: absolute;
+    left: -50px;
+    top: 500px;
+    margin: 0;
+}
+
+.wrapper > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
 }
 
 #end-container {

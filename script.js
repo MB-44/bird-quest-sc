@@ -3,7 +3,7 @@ var Jigsaw = function () {
     var puzzleImg = {};
     var pieces = [];
     var gridSize = 3;
-    var puzzleSize = 300; 
+    var puzzleSize = 700; 
     var timerInterval;
     var timeRemaining = 3;
     var gameActive = false;
@@ -128,9 +128,9 @@ var Jigsaw = function () {
             if (timeRemaining <= 0) {
                 clearInterval(timerInterval);
                 gameActive = false;
-                $('#message').text("Time's up! You lose!");
+                $('#message').text("You've run out of time! ");
                 setTimeout(function(){
-                    window.location.href = "end.html?msg=" + encodeURIComponent("Time's up! You lose!");
+                    window.location.href = "end.html?msg=" + encodeURIComponent("You've run out of time! ");
                 }, 500);
             }
         }, 1000);
