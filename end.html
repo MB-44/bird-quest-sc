@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Jigsaw Puzzle Challenge - Game Over</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    #end-container {
+      text-align: center;
+    }
+    #end-container h1 {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="end-container">
+    <h1 id="end-message">Game Over</h1>
+    <button id="play-again-button" onclick="window.location.href='index.html'">Play Again</button>
+  </div>
+  <script>
+    function getQueryParam(param) {
+      var urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+    var msg = getQueryParam('msg');
+    if (msg) {
+      document.getElementById('end-message').innerText = msg;
+    }
+  </script>
+</body>
+</html>
