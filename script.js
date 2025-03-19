@@ -8,7 +8,6 @@ var Jigsaw = function () {
     var timeRemaining = 30;
     var gameActive = false;
 
-    // Piece constructor
     var Piece = function (row, col, size) {
         this.row = row;
         this.col = col;
@@ -17,7 +16,6 @@ var Jigsaw = function () {
         this.size = size;
         this.newRow = row;
         this.newCol = col;
-        // Holds the initial scrambled position
         this.startRow = row;
         this.startCol = col;
 
@@ -65,7 +63,6 @@ var Jigsaw = function () {
         gridSize = Math.max(opt.gridSize || 3, 3);
         container = opt.container;
 
-        // Set container size explicitly
         $(container).css({
             width: puzzleSize + 'px',
             height: puzzleSize + 'px'
@@ -98,7 +95,6 @@ var Jigsaw = function () {
         img.src = image || 'https://via.placeholder.com/300';
     }
 
-    // Fallback: create default colored pieces if image fails to load
     function createDefaultImage() {
         puzzleImg.url = '';
         puzzleImg.height = puzzleSize;
@@ -133,7 +129,6 @@ var Jigsaw = function () {
                 clearInterval(timerInterval);
                 gameActive = false;
                 $('#message').text("Time's up! You lose!");
-                // Redirect to the game over page with a message after a short delay
                 setTimeout(function(){
                     window.location.href = "end.html?msg=" + encodeURIComponent("Time's up! You lose!");
                 }, 500);
@@ -145,7 +140,6 @@ var Jigsaw = function () {
         $('#timer').text(timeRemaining);
     }
 
-    // Shuffles and sets a new scramble, saving each piece's starting position.
     function resetGame() {
         for (var i = 0; i < pieces.length; i++) {
             pieces[i].originalRow = pieces[i].row;
@@ -160,7 +154,6 @@ var Jigsaw = function () {
 
                 var piece = pieces[index];
                 piece.movePiece(i, j);
-                // Save the scrambled starting position
                 piece.startRow = i;
                 piece.startCol = j;
 
@@ -176,7 +169,6 @@ var Jigsaw = function () {
                     }
                     if (!clickedPiece) return;
 
-                    // Check four directions for an empty spot
                     var directions = [
                         {row: 0, col: -1},
                         {row: -1, col: 0},
@@ -206,7 +198,6 @@ var Jigsaw = function () {
     function checkWinCondition() {
         if (!gameActive) return;
 
-        // Puzzle is solved when every piece is in its original position.
         var win = true;
         for (var i = 0; i < pieces.length; i++) {
             if (pieces[i].newRow !== pieces[i].originalRow || 
@@ -220,7 +211,6 @@ var Jigsaw = function () {
             gameActive = false;
             clearInterval(timerInterval);
             $('#message').text("Congratulations! You won!");
-            // Redirect to the game over page with a win message after a short delay
             setTimeout(function(){
                 window.location.href = "end.html?msg=" + encodeURIComponent("Congratulations! You won!");
             }, 500);
@@ -243,7 +233,6 @@ var Jigsaw = function () {
         var pieceSize = puzzleSize / gridSize;
         for (var i = 0; i < gridSize; i++) {
             for (var j = 0; j < gridSize; j++) {
-                // Omit the last piece (bottom-right corner)
                 if (i === gridSize - 1 && j === gridSize - 1) continue;
 
                 var piece = new Piece(i, j, pieceSize);
