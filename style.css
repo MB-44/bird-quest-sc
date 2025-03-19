@@ -1,10 +1,20 @@
-body {
+html, body {
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    padding: 0;
     width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.rotated-container {
+    width: 100vh;
+    height: 100vw;
+
+    transform: rotate(90deg) translateY(-100%);
+    transform-origin: top left;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 body.start-page {
@@ -44,6 +54,7 @@ body.end-page {
     background-color: #f0f0f0;
 }
 
+/* Timer container */
 .timer-container {
     text-align: center;
     margin-bottom: 10px;
@@ -60,6 +71,7 @@ body.end-page {
     height: 30px;
 }
 
+/* Button styling */
 button {
     padding: 10px 20px;
     font-size: 16px;
@@ -75,6 +87,7 @@ button:hover {
     background-color: #015f92;
 }
 
+/* End page container */
 #end-container {
     text-align: center;
 }
