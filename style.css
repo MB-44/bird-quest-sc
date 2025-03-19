@@ -4,6 +4,7 @@ html, body {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    font-family: "TrajanPro";
 }
 
 .rotated-container {
@@ -54,7 +55,6 @@ body.end-page {
     background-color: #f0f0f0;
 }
 
-/* Timer container */
 .timer-container {
     text-align: center;
     margin-bottom: 10px;
@@ -71,7 +71,6 @@ body.end-page {
     height: 30px;
 }
 
-/* Button styling */
 button {
     padding: 10px 20px;
     font-size: 16px;
@@ -81,13 +80,21 @@ button {
     border-radius: 4px;
     cursor: pointer;
     margin: 5px;
+    font-family: "TrajanPro";
+    font-weight: bolder;
 }
 
 button:hover {
     background-color: #015f92;
 }
 
-/* End page container */
 #end-container {
     text-align: center;
+}
+
+@font-face {
+    font-family: "TrajanPro";
+    src: url("fonts/TrajanPro3Light.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
 }
