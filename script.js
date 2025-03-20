@@ -2,7 +2,7 @@ var Jigsaw = function () {
     var container;
     var puzzleImg = {};
     var pieces = [];
-    var gridSize = 3;
+    var gridSize = 120;
     var puzzleSize = 700; 
     var timerInterval;
     var timeRemaining = 3;
@@ -117,7 +117,7 @@ var Jigsaw = function () {
 
     function startTimer() {
         gameActive = true;
-        timeRemaining = 3;
+        timeRemaining = 120;
         updateTimerDisplay();
 
         clearInterval(timerInterval);
@@ -255,7 +255,7 @@ var Jigsaw = function () {
 
     function resetToStart() {
         clearInterval(timerInterval);
-        timeRemaining = 3;
+        timeRemaining = 120;
         updateTimerDisplay();
         for (var i = 0; i < pieces.length; i++) {
             pieces[i].movePiece(pieces[i].startRow, pieces[i].startCol);
