@@ -9,8 +9,15 @@
   <div class="rotated-container">
     <div id="end-container">
       <h1 id="end-message">Game Over</h1>
-      <button id="play-again-button" onclick="window.location.href='start.html'">Play Again</button>
+      <!-- <button id="play-again-button" onclick="window.location.href='start.html'">Play Again</button> -->
     </div>
+    <img 
+        src="./img/restart-b.png" 
+        style="cursor:pointer;"
+        id="play-again-image"
+        onclick="window.location.href='start.html'"
+        alt="Play Again"
+      >
   </div>
   <script>
     function getQueryParam(param) {
