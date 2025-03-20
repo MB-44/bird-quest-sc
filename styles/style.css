@@ -46,7 +46,7 @@ body.end-page {
 }
 .timer-container {
     position: absolute;
-    top: -80px;
+    top: -200px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 36px;
@@ -86,7 +86,7 @@ button {
 }
 #buttons-row {
     position: absolute;
-    top: 800px;
+    top: 2200px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
