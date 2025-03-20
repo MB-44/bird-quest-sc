@@ -121,3 +121,7 @@ button {
 #ready-button {
     margin-top: 200px;
 }
+
+#end-message {
+    color: white;
+}

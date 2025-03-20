@@ -117,6 +117,7 @@ var Jigsaw = function () {
 
     function startTimer() {
         gameActive = true;
+        
         timeRemaining = 120;
         updateTimerDisplay();
 
@@ -137,7 +138,12 @@ var Jigsaw = function () {
     }
 
     function updateTimerDisplay() {
-        $('#timer').text(timeRemaining);
+        var minutes = Math.floor(timeRemaining / 60);
+        var seconds = timeRemaining % 60;
+
+        var displayTime = minutes + ":" + (seconds < 10 ? "0" + seconds : seconds);
+
+        $('#timer').text(displayTime);
     }
 
     function resetGame() {
